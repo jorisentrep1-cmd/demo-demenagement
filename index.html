@@ -41,10 +41,20 @@ nav{position:fixed;top:34px;left:0;right:0;z-index:100;height:74px;display:flex;
 .hamburger span{display:block;width:22px;height:1.5px;background:var(--text2)}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:108px}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1698917414969-feade59e3343?auto=format&fit=crop&w=1800&q=80') center/cover}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,36,32,.55) 0%,rgba(43,36,32,.72) 100%)}
+#hero{padding-top:108px;background:var(--cream)}
+.hero-collage{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;max-width:1180px;margin:0 auto;padding:5rem 2rem;min-height:calc(100vh - 108px)}
+.hero-collage-text .hero-eyebrow{color:var(--gold)}
+.hero-collage-text h1.hero-title{color:var(--charcoal)}
+.hero-collage-text .hero-sub{color:var(--text2);max-width:440px;margin:0 0 2.25rem}
+.hero-collage-text .hero-btns{justify-content:flex-start}
+.hero-collage-text .btn-s{color:var(--charcoal);border-color:var(--border)}
+.hero-collage-text .btn-s:hover{border-color:var(--charcoal);background:rgba(27,58,107,.05)}
+.hero-collage-photos{position:relative;height:420px}
+.hero-collage-photo{position:absolute;border-radius:18px;background-size:cover;background-position:center;box-shadow:0 20px 45px rgba(27,58,107,.2)}
+.hero-collage-photo-1{width:72%;height:78%;top:0;left:0;z-index:1;background-image:url('https://images.unsplash.com/photo-1698917414969-feade59e3343?auto=format&fit=crop&w=900&q=80')}
+.hero-collage-photo-2{width:52%;height:52%;bottom:0;right:0;z-index:2;border:5px solid var(--cream);background-image:url('https://images.unsplash.com/photo-1620455800201-7f00aeef12ed?auto=format&fit=crop&w=700&q=80')}
 .hero-inner{max-width:800px;margin:0 auto;padding:4rem 2rem;text-align:center;position:relative;z-index:1;color:#fff}
+@media(max-width:900px){.hero-collage{grid-template-columns:1fr;padding:3rem 1.5rem;gap:2rem}.hero-collage-text{text-align:center}.hero-collage-text .hero-sub{margin-left:auto;margin-right:auto}.hero-collage-text .hero-btns{justify-content:center}.hero-collage-photos{order:-1;height:320px;max-width:380px;margin:0 auto}}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:1.75rem}
 .hero-eyebrow::before,.hero-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold2)}
 h1.hero-title{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.5px}
@@ -160,15 +170,19 @@ footer{background:var(--charcoal);padding:3rem 2rem;text-align:center}
 </nav>
 
 <section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Déménagement · Bordeaux</div>
-    <h1 class="hero-title">Votre déménagement,<br/>en toute sérénité.</h1>
-    <p class="hero-sub">Déménagement de particuliers et professionnels, garde-meuble, emballage, partout à Bordeaux et environs.</p>
-    <div class="hero-btns">
-      <a href="tel:+33556000000" class="btn-p">Demander un devis →</a>
-      <a href="#prestations" class="btn-s">Voir nos prestations</a>
+  <div class="hero-collage">
+    <div class="hero-collage-text">
+      <div class="hero-eyebrow">Déménagement · Bordeaux</div>
+      <h1 class="hero-title">Votre déménagement,<br/>en toute sérénité.</h1>
+      <p class="hero-sub">Déménagement de particuliers et professionnels, garde-meuble, emballage, partout à Bordeaux et environs.</p>
+      <div class="hero-btns">
+        <a href="tel:+33556000000" class="btn-p">Demander un devis →</a>
+        <a href="#prestations" class="btn-s">Voir nos prestations</a>
+      </div>
+    </div>
+    <div class="hero-collage-photos">
+      <div class="hero-collage-photo hero-collage-photo-1"></div>
+      <div class="hero-collage-photo hero-collage-photo-2"></div>
     </div>
   </div>
 </section>
